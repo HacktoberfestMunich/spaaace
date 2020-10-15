@@ -48,7 +48,7 @@ export default class SpaaaceServerEngine extends ServerEngine {
         };
 
         // handle client restart requests
-        socket.on('requestRestart', function(data){makePlayerShip((data.name != '') ? data.name : nameGenerator('general'))});
+        socket.on('requestRestart', function(data){makePlayerShip((data.name != '') ? data.name : nameGenerator('general'));});
     }
 
     // a player has disconnected
