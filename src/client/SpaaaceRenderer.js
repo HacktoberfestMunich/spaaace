@@ -293,6 +293,8 @@ export default class SpaaaceRenderer extends Renderer {
         document.querySelector('#tryAgain').disabled = true;
         document.querySelector('#joinGame').disabled = true;
         document.querySelector('#joinGame').style.opacity = 0;
+        document.querySelector('#playerName').disabled = true;
+        document.querySelector('#nameContainer').style.opacity = 0;
 
         this.gameStarted = true; // todo state shouldn't be saved in the renderer
 
