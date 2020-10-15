@@ -4,3 +4,4 @@ dist/bundle.js
 
 *.trace
 yarn.lock
+dist-server

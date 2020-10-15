@@ -65,10 +65,16 @@ export default class SpaaaceClientEngine extends ClientEngine {
         // handle sounds
         this.sounds = {
             missileHit: new Howl({ src: [assetPathPrefix + 'assets/audio/193429__unfa__projectile-hit.mp3'] }),
-            fireMissile: new Howl({ src: [assetPathPrefix + 'assets/audio/248293__chocobaggy__weird-laser-gun.mp3'] })
+            fireMissile: new Howl({ src: [assetPathPrefix + 'assets/audio/248293__chocobaggy__weird-laser-gun.mp3'] }),
+            parrot: new Howl({ src: [assetPathPrefix + 'assets/audio/parrot.mp3'] })
         };
 
-        this.gameEngine.on('fireMissile', () => { this.sounds.fireMissile.play(); });
+        this.gameEngine.on('fireMissile', () => {
+            if (this.renderer.playerShip.actor.shipSprite._texture.textureCacheIds[0] == 'shipparrot') {
+              this.sounds.parrot.play();
+            } else {
+            this.sounds.fireMissile.play(); }
+        });
         this.gameEngine.on('missileHit', () => {
             // don't play explosion sound if the player is not in game
             if (this.renderer.playerShip) {
