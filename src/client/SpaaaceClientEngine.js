@@ -71,9 +71,10 @@ export default class SpaaaceClientEngine extends ClientEngine {
 
         this.gameEngine.on('fireMissile', () => {
             if (this.renderer.playerShip.actor.shipSprite._texture.textureCacheIds[0] == 'shipparrot') {
-              this.sounds.parrot.play();
+                this.sounds.parrot.play();
             } else {
-            this.sounds.fireMissile.play(); }
+                this.sounds.fireMissile.play();
+            }
         });
         this.gameEngine.on('missileHit', () => {
             // don't play explosion sound if the player is not in game
