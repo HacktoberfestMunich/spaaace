@@ -117,8 +117,8 @@ function (_ClientEngine) {
 
       this.sounds = {
         missileHit: new Howl({
+			src: [assetPathPrefix + 'assets/audio/193429__unfa__projectile-hit.mp3']
           // src: [assetPathPrefix + 'assets/audio/193429__unfa__projectile-hit.mp3']
-		  src: [assetPathPrefix + 'assets/audio/Pew_Pew_gun.mp3'] 
         }),
         fireMissile: new Howl({
           src: [assetPathPrefix + 'assets/audio/248293__chocobaggy__weird-laser-gun.mp3']
