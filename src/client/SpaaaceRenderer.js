@@ -20,6 +20,8 @@ export default class SpaaaceRenderer extends Renderer {
             bg2: 'assets/space2.png',
             bg3: 'assets/clouds2.png',
             bg4: 'assets/clouds1.png',
+            bg5: 'assets/water1.png',
+            bg6: 'assets/water2.png',
             smokeParticle: 'assets/smokeparticle.png'
         };
     }
@@ -104,12 +106,16 @@ export default class SpaaaceRenderer extends Renderer {
             this.viewportWidth, this.viewportHeight);
         this.bg4 = new PIXI.extras.TilingSprite(PIXI.loader.resources.bg4.texture,
             this.viewportWidth, this.viewportHeight);
+        this.bg5 = new PIXI.extras.TilingSprite(PIXI.loader.resources.bg3.texture,
+            this.viewportWidth, this.viewportHeight);
+        this.bg6 = new PIXI.extras.TilingSprite(PIXI.loader.resources.bg4.texture,
+            this.viewportWidth, this.viewportHeight);
 
         this.bg3.blendMode = PIXI.BLEND_MODES.ADD;
         this.bg4.blendMode = PIXI.BLEND_MODES.ADD;
         this.bg4.alpha = 0.6;
 
-        this.stage.addChild(this.bg1, this.bg2, this.bg3, this.bg4);
+        this.stage.addChild(this.bg1, this.bg2, this.bg3, this.bg4, this.bg5, this.bg6);
         this.stage.addChild(this.camera);
 
         // this.debug= new PIXI.Graphics();
@@ -145,6 +151,10 @@ export default class SpaaaceRenderer extends Renderer {
         this.bg3.height = this.viewportHeight;
         this.bg4.width = this.viewportWidth;
         this.bg4.height = this.viewportHeight;
+        this.bg5.width = this.viewportWidth;
+        this.bg5.height = this.viewportHeight;
+        this.bg6.width = this.viewportWidth;
+        this.bg6.height = this.viewportHeight;
 
         this.renderer.resize(this.viewportWidth, this.viewportHeight);
     }
@@ -275,6 +285,12 @@ export default class SpaaaceRenderer extends Renderer {
 
         this.bg4.tilePosition.x = bgOffsetX * 0.75;
         this.bg4.tilePosition.y = bgOffsetY * 0.75;
+
+        this.bg5.tilePosition.x = bgOffsetX * 0.5;
+        this.bg5.tilePosition.y = bgOffsetY * 0.5;
+
+        this.bg6.tilePosition.x = bgOffsetX * 0.5;
+        this.bg6.tilePosition.y = bgOffsetY * 0.5;
 
         this.elapsedTime = now;
 
