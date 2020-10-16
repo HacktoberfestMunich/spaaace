@@ -109,9 +109,9 @@ export default class SpaaaceRenderer extends Renderer {
             this.viewportWidth, this.viewportHeight);
         this.bg4 = new PIXI.extras.TilingSprite(PIXI.loader.resources.bg4.texture,
             this.viewportWidth, this.viewportHeight);
-        this.bg5 = new PIXI.extras.TilingSprite(PIXI.loader.resources.bg3.texture,
+        this.bg5 = new PIXI.extras.TilingSprite(PIXI.loader.resources.bg5.texture,
             this.viewportWidth, this.viewportHeight);
-        this.bg6 = new PIXI.extras.TilingSprite(PIXI.loader.resources.bg4.texture,
+        this.bg6 = new PIXI.extras.TilingSprite(PIXI.loader.resources.bg6.texture,
             this.viewportWidth, this.viewportHeight);
 
         this.bg3.blendMode = PIXI.BLEND_MODES.ADD;
