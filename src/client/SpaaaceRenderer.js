@@ -22,6 +22,7 @@ export default class SpaaaceRenderer extends Renderer {
             ship6: 'assets/ship6.png',
             ship7: 'assets/ship7.png',
             ship10: 'assets/ship10.png',
+            shipFairy: 'assets/shipFairy.png',
             missile: 'assets/shot.png',
             bg1: 'assets/space3.png',
             bg2: 'assets/space2.png',
