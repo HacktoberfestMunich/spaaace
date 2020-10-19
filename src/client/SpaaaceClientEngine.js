@@ -28,7 +28,7 @@ export default class SpaaaceClientEngine extends ClientEngine {
                 if (Utils.isTouchDevice()){
                     this.renderer.enableFullScreen();
                 }
-                this.socket.emit('requestRestart');
+                this.socket.emit('requestRestart', { name: document.querySelector('#playerName').value });
             });
 
             document.querySelector('#joinGame').addEventListener('click', (clickEvent) => {
@@ -36,7 +36,7 @@ export default class SpaaaceClientEngine extends ClientEngine {
                     this.renderer.enableFullScreen();
                 }
                 clickEvent.currentTarget.disabled = true;
-                this.socket.emit('requestRestart');
+                this.socket.emit('requestRestart', { name: document.querySelector('#playerName').value });
             });
 
             document.querySelector('#reconnect').addEventListener('click', () => {

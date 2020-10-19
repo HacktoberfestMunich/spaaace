@@ -37,18 +37,18 @@ export default class SpaaaceServerEngine extends ServerEngine {
     onPlayerConnected(socket) {
         super.onPlayerConnected(socket);
 
-        let makePlayerShip = () => {
+        let makePlayerShip = (name) => {
             let ship = this.gameEngine.makeShip(socket.playerId);
 
             this.scoreData[ship.id] = {
                 kills: 0,
-                name: nameGenerator('general')
+                name: name
             };
             this.updateScore();
         };
 
         // handle client restart requests
-        socket.on('requestRestart', makePlayerShip);
+        socket.on('requestRestart', function(data){makePlayerShip((data.name != '') ? data.name : nameGenerator('general'));});
     }
 
     // a player has disconnected

@@ -48,7 +48,7 @@ html,body{
 	transition: opacity 0.3s ease-in;
 }
 
-#tryAgain, #joinGame, #reconnect{
+#tryAgain, #joinGame, #nameContainer, #reconnect{
 	position: absolute;
 	left: 50%;
 	top: 50%;
@@ -57,12 +57,18 @@ html,body{
 	transform: translateX(-50%) translateY(-50%);
 }
 
-#joinGame {
+#joinGame, #nameContainer {
 	pointer-events: all;
 	opacity: 1;
 }
 
-button{
+#nameContainer {
+	position: absolute;
+	top: 45%;
+	display: inline-block;
+}
+
+button, #nameContainer{
 
 	position: relative;
 	background-color: rgba(#68b2f8, 0.2);
